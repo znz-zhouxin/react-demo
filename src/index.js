@@ -86,13 +86,6 @@ class Board extends React.Component {
 }
 
 class Square extends React.Component {
-  constructor(props) {
-    super()
-    this.state = {
-      value: props.value,
-      turn: 'X'
-    }
-  }
   render() {
     return (
       <button className="square" onClick={this.props.clickEvent}>
