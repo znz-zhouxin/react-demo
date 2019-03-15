@@ -1,5 +1,6 @@
 import React from 'react';
 import Square from './square';
+import Character from '../../components/character'
 
 const winJ = [
   [0,1,2],
@@ -57,11 +58,8 @@ export default class Board extends React.Component {
   checkWin(squares) {
     let winner = null
     winJ.forEach((item) => {
-      console.log(`one: ${squares[item[0]]}, two: ${squares[item[1]]}, three: ${squares[item[2]]}`)
       if (squares[item[0]] && squares[item[0]] === squares[item[1]] && squares[item[0]] === squares[item[2]]) {
         winner = squares[item[0]]
-      } else {
-        console.log('fail')
       }
     })
     return winner
@@ -75,7 +73,7 @@ export default class Board extends React.Component {
   }
   getStatus() {
     if (this.state.winner) {
-      return `Winner is ${this.state.winner}` 
+      return <Character value={`Winner is ${this.state.winner}`} />
     } else if (!this.state.squares.includes(null)) {
       return `Game Over`
     } else {
