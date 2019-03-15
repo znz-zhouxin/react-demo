@@ -5,6 +5,6 @@ import Game from './views/game'
 import Pricing from './components/pricing'
 
 ReactDOM.render(
-  <Pricing />,
+  <Game />,
   document.getElementById('root')
 )
