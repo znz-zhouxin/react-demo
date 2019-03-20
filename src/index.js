@@ -4,8 +4,14 @@ import './index.css'
 import Game from './views/game'
 import Pricing from './components/pricing'
 import * as _ from 'lodash'
+import TodoViewContainer from './containers/TodoViewContainer'
+import TodoActions from './data//TodoActions'
 
 ReactDOM.render(
-  <Game />,
+  <TodoViewContainer />,
   document.getElementById('root')
 )
+
+TodoActions.addTodo('My first task');
+TodoActions.addTodo('Another task');
+TodoActions.addTodo('Finish this tutorial');
